@@ -13,3 +13,5 @@ Finally, inside your Travis-CI repository settings, create a new environment var
 
 ![Adding an environment variable](https://i.imgur.com/ROPxG7X.png)
 ![Discord Travis-CI Webhook](https://i.imgur.com/3N0Mwgn.png)
+
+No webserver needed, everything is done by Travis-CI on their build servers.
