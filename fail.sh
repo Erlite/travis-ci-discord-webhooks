@@ -1,0 +1,2 @@
+echo 'Sending Discord Webhook';
+curl -v -H User-Agent:bot -H Content-Type:application/json -d '{"avatar_url": "https://maxcdn.icons8.com/Share/icon/Logos//travis_ci1600.png", "username": "Travis CI", "embeds": [{"author": {"name": "'"$AUTHOR_NAME"'", "url": "https://github.com/'"$AUTHOR_NAME"'"}, "title": "Commit '"$TRAVIS_COMMIT"': Build Failed!", "type": "rich", "color": 16711680, "url": "https://github.com/RepoOwner/RepoName/commit/'"$TRAVIS_COMMIT"'", "description": "'"$TRAVIS_COMMIT_MESSAGE"'"}]}' $DISCORD_WEBHOOK_URL;
