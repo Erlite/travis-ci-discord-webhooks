@@ -1,3 +1,3 @@
 echo 'Sending Discord Webhook';
-export TIMESTAMP='date +%FT%T%Z';
+export TIMESTAMP=$(date +%FT%T%Z);
 curl -v -H User-Agent:bot -H Content-Type:application/json -d '{"avatar_url": "https://i.imgur.com/kOfUGNS.png", "username": "Travis CI", "embeds": [{"author": {"name": "'"$AUTHOR_NAME"'", "url": "https://github.com/'"$AUTHOR_NAME"'", "icon_url": "https://github.com/'"$AUTHOR_NAME"'.png"}, "title": "['"$TRAVIS_REPO_SLUG"':'"$TRAVIS_BRANCH"'] Build #'"$TRAVIS_BUILD_NUMBER"' Passed", "type": "rich", "color": 65280, "url": "'"$BUILD_URL"'", "description": "'"$TRAVIS_COMMIT_MESSAGE"'", "timestamp": "'"$TIMESTAMP"'"}]}' $DISCORD_WEBHOOK_URL;
